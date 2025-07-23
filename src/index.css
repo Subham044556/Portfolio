@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+body{
+  background: #080808;
+  color:#fff;
+}
+
+
+
+
+
+/* Background Image */
+/* .background {
+  background: url('images/pexels-jeshoots-com-147458-442573.jpg"') no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+/* bg-[#97a9af44] p-1 m-1 hover:underline cursor-pointer */
+.nav {
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  padding: 15px 40px;
+  top: 0;
+  left: 0; 
+}
+
+
+.nav ul li {
+ display: inline-block;
+ list-style: none;
+ margin: 10px 20px;
+}
+.nav ul li a{
+  color:#b76e79;
+  text-decoration: none;
+  font-size:18px;
+  position: relative;
+
+}
+.nav ul li a:hover{
+  color: #dc28ed;
+}
+
+
+.nav ul li a::after{
+  content:' ';
+  width:0;
+  height: 3px;
+  background:#c420d3;
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  transition: 0.5s;
+}
+
+.nav ul li a:hover::after{
+ width: 100%;
+
+}
+
+.abt_me{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size:20px;
+}
+
+.tab-titles{
+  display: flex;
+  margin: 20px 0 40px;
+}
+
+.tab-links{
+  margin-right: 50px;
+  font-size:18px ;
+  font-weight: 500;
+  position: relative;
+}
+.tab-links::after{
+  content:'';
+  width: 0;
+  height: 3px;
+  background:black;
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  transition: 0.5s;
+}
+
+.tab-links.active-link::after{
+  width:50% ;
+}
+
+
+.site-name{
+  color: antiquewhite;
+  font-family: fantasy;
+  font-size: larger;
+}
+
+@media (prefers-color-scheme: light) {
+
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
