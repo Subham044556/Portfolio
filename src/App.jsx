@@ -120,7 +120,7 @@ function App() {
           style={{ backgroundImage: `url(${image_1})`, opacity: bgOpacity }}
         ></div>
       </div>
-      
+
           {/* navbar section */}
       <div className="navbar">
         <div className="navbar-container">
@@ -299,7 +299,7 @@ function App() {
       {/* ===== Projects Section ===== */}
       <section className="py-20 px-6 md:px-16 " id="projects">
         <h2
-          className="text-4xl font-bold text-center text-[#4b0082] mb-12"
+          className="text-4xl font-bold text-center text-[#e234e6] mb-12"
           data-aos="fade-up"
         >
           Projects
@@ -338,7 +338,7 @@ function App() {
       {/* ===== Contact Section ===== */}
       <section className="py-20 px-6 md:px-16 " id="contact">
         <h2
-          className="text-4xl font-bold text-center text-[#4b0082] mb-12"
+          className="text-4xl font-bold text-center text-[#e234e6] mb-12"
           data-aos="fade-up"
         >
           Contact Me

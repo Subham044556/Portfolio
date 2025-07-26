@@ -41,9 +41,17 @@ body{
 
 /* Branding */
 .site-name {
-  color: #ffffff;
-  font-size: 1.5rem;
-  font-weight: 600;
+  color: #fff;
+  font-size: clamp(1.4rem, 2.5vw, 2.4rem);
+  font-weight: 400;
+  letter-spacing: 1px;
+  padding: 0.3em 0.7em;
+  text-align: left;
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  white-space: nowrap; /* Ensure single line */
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* Nav menu */
