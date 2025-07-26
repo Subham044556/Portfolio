@@ -1,7 +1,7 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
 import heroImage from "./images/hero_image.jpg";
-import image_1 from "./images/background.png"
+import image_1 from "./images/background.png";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -35,11 +35,14 @@ const handleSubmit = async (e) => {
   const message = e.target[2].value;
 
   try {
-    const response = await fetch("https://portfolio-backend-zwvz.onrender.com/api/contact", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name, email, message }),
-    });
+    const response = await fetch(
+      "https://portfolio-backend-zwvz.onrender.com/api/contact",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, message }),
+      }
+    );
 
     if (response.ok) {
       alert("Message sent successfully!");
@@ -54,9 +57,6 @@ const handleSubmit = async (e) => {
   }
 };
 
-
-
-
 function App() {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [bgOpacity, setBgOpacity] = useState(1);
@@ -68,7 +68,8 @@ function App() {
       const scrollY = window.scrollY;
       const fadeStart = 0;
       const fadeEnd = 400; // adjust as needed
-      const opacity = 1 - Math.min((scrollY - fadeStart) / (fadeEnd - fadeStart), 1);
+      const opacity =
+        1 - Math.min((scrollY - fadeStart) / (fadeEnd - fadeStart), 1);
       setBgOpacity(opacity);
     };
 
@@ -86,11 +87,12 @@ function App() {
   return (
     <>
       <div
-        className="fixed top-0 left-0 w-full h-screen z-0 transition-opacity duration-300 ease-out"
+        className="fixed top-0 left-0 w-full min-h-screen z-0 transition-opacity duration-300 ease-out"
         style={{
           backgroundImage: `url(${image_1})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
           opacity: bgOpacity,
           pointerEvents: "none",
         }}
@@ -98,22 +100,33 @@ function App() {
 
       <div className="fixed top-0 w-full z-50 bg-black bg-opacity-90 backdrop-blur-md px-4 py-3 shadow-lg">
         <div className="flex justify-between items-center">
-        <h1 className="site-name">Subhm's PORTFOLIO</h1>
-        <nav className="nav flex justify-end flex-row-reverse">
-          <ul className="flex space-x-8 text-lg font-medium text-white">
-            <li><a href="#">Home</a></li>
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </nav>
+          <h1 className="site-name">Subhm's PORTFOLIO</h1>
+          <nav className="nav flex justify-end flex-row-reverse">
+            <ul className="flex space-x-8 text-lg font-medium text-white">
+              <li>
+                <a href="#">Home</a>
+              </li>
+              <li>
+                <a href="#about">About Me</a>
+              </li>
+              <li>
+                <a href="#projects">Projects</a>
+              </li>
+              <li>
+                <a href="#contact">Contact</a>
+              </li>
+            </ul>
+          </nav>
         </div>
       </div>
 
       <div className="relative z-10 h-screen"></div>
 
       <section className="min-h-screen bg-transparent px-8 py-16" id="about">
-        <div className="flex flex-col md:flex-row items-center justify-center h-fit py-20 px-6 md:px-16 bg-transparent " onMouseMove={handleMouseMove}>
+        <div
+          className="flex flex-col md:flex-row items-center justify-center h-fit py-20 px-6 md:px-16 bg-transparent "
+          onMouseMove={handleMouseMove}
+        >
           <div
             className="w-full md:w-1/3"
             data-aos="zoom-in"
@@ -137,7 +150,9 @@ function App() {
               transition: "transform 0.1s ease-out",
             }}
           >
-            <h1 className="text-4xl font-mono font-bold text-[#6973cd]">About Me</h1>
+            <h1 className="text-4xl font-mono font-bold text-[#6973cd]">
+              About Me
+            </h1>
             <p className="mt-4 text-[#ddb6f1d7] leading-relaxed text-lg">
               I'm Subham, a full stack developer passionate about building
               modern, user-friendly web apps. With a background in industrial
@@ -298,9 +313,7 @@ function App() {
             </p>
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
-                <span className="text-[#dc28ed] font-semibold">
-                  📧 Email:
-                </span>
+                <span className="text-[#dc28ed] font-semibold">📧 Email:</span>
                 <a
                   href="mailto:subham@example.com"
                   className="text-[#e7ebf0] hover:underline"
@@ -309,9 +322,7 @@ function App() {
                 </a>
               </div>
               <div className="flex items-center space-x-3">
-                <span className="text-[#dc28ed] font-semibold">
-                  📞 Phone:
-                </span>
+                <span className="text-[#dc28ed] font-semibold">📞 Phone:</span>
                 <a
                   href="tel:+918926040785"
                   className="text-[#e7ebf0] hover:underline"
@@ -328,7 +339,7 @@ function App() {
             </div>
           </div>
 
-          <form 
+          <form
             className=" bg-[#534c57] p-8 rounded-xl shadow-md space-y-6"
             data-aos="fade-left"
             onSubmit={handleSubmit}
