@@ -120,12 +120,13 @@ function App() {
           style={{ backgroundImage: `url(${image_1})`, opacity: bgOpacity }}
         ></div>
       </div>
-
-      <div className="fixed top-0 w-full z-50 bg-black bg-opacity-90 backdrop-blur-md px-4 py-3 shadow-lg">
-        <div className="flex justify-between items-center">
+      
+          {/* navbar section */}
+      <div className="navbar">
+        <div className="navbar-container">
           <h1 className="site-name">Subham's PORTFOLIO</h1>
-          <nav className="nav flex justify-end flex-row-reverse">
-            <ul className="flex space-x-8 text-lg font-medium text-white">
+          <nav className="nav">
+            <ul>
               <li>
                 <a href="#">Home</a>
               </li>
