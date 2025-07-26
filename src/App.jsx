@@ -100,7 +100,7 @@ function App() {
 
       <div className="fixed top-0 w-full z-50 bg-black bg-opacity-90 backdrop-blur-md px-4 py-3 shadow-lg">
         <div className="flex justify-between items-center">
-          <h1 className="site-name">Subham's PORTFOLIO</h1>
+          <h1 className="site-name">Subhm's PORTFOLIO</h1>
           <nav className="nav flex justify-end flex-row-reverse">
             <ul className="flex space-x-8 text-lg font-medium text-white">
               <li>
@@ -164,23 +164,23 @@ function App() {
             {/* Skills */}
             <div className="mt-12 grid md:grid-cols-2 gap-8">
               <div
-                className="bg-[#927e93] p-6 rounded-2xl shadow-md hover:shadow-xl transition"
+                className="bg-[#927e93] bg-opacity-95 p-6 rounded-2xl shadow-md hover:shadow-xl transition backdrop-blur-sm border border-[#a989b3]"
                 data-aos="fade-up"
               >
-                <h3 className="text-2xl font-semibold mb-6 text-[#7b158f]">
+                <h3 className="text-2xl font-semibold mb-6 text-[#2d0a37] drop-shadow-sm">
                   Skills
                 </h3>
                 {/* Fixed grid layout - responsive columns and proper spacing */}
-                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 justify-items-center">
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 justify-items-center">
                   {skills.map((skill, index) => (
                     <div
                       key={index}
-                      className="flex flex-col items-center group cursor-pointer hover:-translate-y-1 transition-transform duration-300 min-h-[80px] justify-center"
+                      className="flex flex-col items-center group cursor-pointer hover:-translate-y-1 transition-all duration-300 min-h-[90px] justify-center bg-white bg-opacity-20 rounded-lg p-3 hover:bg-opacity-30"
                     >
-                      <div className="text-3xl sm:text-4xl group-hover:scale-110 transition-transform duration-300 mb-2">
+                      <div className="text-3xl sm:text-4xl group-hover:scale-110 transition-transform duration-300 mb-3 drop-shadow-sm">
                         {skill.icon}
                       </div>
-                      <p className="text-xs sm:text-sm font-medium text-[#430c68] group-hover:text-[#e2dfe8] text-center leading-tight">
+                      <p className="text-sm font-semibold text-[#1a0520] group-hover:text-[#0f0315] text-center leading-tight drop-shadow-sm">
                         {skill.name}
                       </p>
                     </div>
@@ -190,67 +190,59 @@ function App() {
 
               {/* Experience */}
               <div
-                className="bg-[#927e93] p-6 rounded-2xl shadow-md hover:shadow-xl transition"
+                className="bg-[#927e93] bg-opacity-95 p-6 rounded-2xl shadow-md hover:shadow-xl transition backdrop-blur-sm border border-[#a989b3]"
                 data-aos="fade-up"
                 data-aos-delay="100"
               >
-                <h3 className="text-2xl font-semibold mb-4 text-[#4b0082]">
+                <h3 className="text-2xl font-semibold mb-6 text-[#2d0a37] drop-shadow-sm">
                   Experience
                 </h3>
-                <ul className="text-gray-700 space-y-3">
-                  <li className="leading-relaxed">
-                    <strong className="text-[#4b0082]">Smart Cycle Parking System</strong> 
-                    <br />
-                    <span className="text-sm">Campus project blending design + tech</span>
+                <ul className="space-y-4">
+                  <li className="leading-relaxed bg-white bg-opacity-15 p-3 rounded-lg">
+                    <strong className="text-[#1a0520] text-base block mb-1">Smart Cycle Parking System</strong> 
+                    <span className="text-[#2c1435] text-sm leading-relaxed">Campus project blending design + tech</span>
                   </li>
-                  <li className="leading-relaxed">
-                    <strong className="text-[#4b0082]">Sticars</strong> 
-                    <br />
-                    <span className="text-sm">Visual sticker tool for car mods</span>
+                  <li className="leading-relaxed bg-white bg-opacity-15 p-3 rounded-lg">
+                    <strong className="text-[#1a0520] text-base block mb-1">Sticars</strong> 
+                    <span className="text-[#2c1435] text-sm leading-relaxed">Visual sticker tool for car mods</span>
                   </li>
-                  <li className="leading-relaxed">
-                    <strong className="text-[#4b0082]">Event Tech Contribution</strong>
-                    <br />
-                    <span className="text-sm">Contributed to event tech stack at NES & Roots (Event management)</span>
+                  <li className="leading-relaxed bg-white bg-opacity-15 p-3 rounded-lg">
+                    <strong className="text-[#1a0520] text-base block mb-1">Event Tech Contribution</strong>
+                    <span className="text-[#2c1435] text-sm leading-relaxed">Contributed to event tech stack at NES & Roots (Event management)</span>
                   </li>
                 </ul>
               </div>
             </div>
 
             {/* Education */}
-            <div className="mt-8 bg-[#927e93] p-6 rounded-xl shadow-md hover:shadow-xl transition">
-              <h3 className="text-2xl font-semibold mb-4 text-[#4b0082]">
+            <div className="mt-8 bg-[#927e93] bg-opacity-95 p-6 rounded-xl shadow-md hover:shadow-xl transition backdrop-blur-sm border border-[#a989b3]">
+              <h3 className="text-2xl font-semibold mb-6 text-[#2d0a37] drop-shadow-sm">
                 Education
               </h3>
-              <ul className="space-y-4 text-[#080c10]">
-                <li>
-                  <strong>B.Tech in Industrial Design</strong>
-                  <br />
+              <ul className="space-y-4">
+                <li className="bg-white bg-opacity-15 p-4 rounded-lg">
+                  <strong className="text-[#1a0520] text-base block mb-2">B.Tech in Industrial Design</strong>
                   <a
                     href="https://www.nitrkl.ac.in/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-orange-700 hover:underline"
+                    className="text-[#b8460a] hover:text-[#d4530c] hover:underline font-medium transition-colors"
                   >
                     National Institute of Technology, Rourkela
                   </a>
-                  <p className="text-sm text-[#dcd3d390]">Aug 2023 – Present</p>
+                  <p className="text-sm text-[#3d1f47] mt-1 font-medium">Aug 2023 – Present</p>
                 </li>
-                <li>
-                  <strong>Class 12</strong>
-                  <br />
-                  Jawahar Navodaya Vidyalaya, Khatiguda
-                  <br />
-                  <span className="text-sm text-[#dcd3d390]">
+                <li className="bg-white bg-opacity-15 p-4 rounded-lg">
+                  <strong className="text-[#1a0520] text-base block mb-1">Class 12</strong>
+                  <span className="text-[#2c1435] block">Jawahar Navodaya Vidyalaya, Khatiguda</span>
+                  <span className="text-sm text-[#3d1f47] font-medium">
                     CBSE | Passed: 2022 | 90%
                   </span>
                 </li>
-                <li>
-                  <strong>Class 10</strong>
-                  <br />
-                  Jawahar Navodaya Vidyalaya, Khatiguda
-                  <br />
-                  <span className="text-sm text-[#dcd3d390]">
+                <li className="bg-white bg-opacity-15 p-4 rounded-lg">
+                  <strong className="text-[#1a0520] text-base block mb-1">Class 10</strong>
+                  <span className="text-[#2c1435] block">Jawahar Navodaya Vidyalaya, Khatiguda</span>
+                  <span className="text-sm text-[#3d1f47] font-medium">
                     CBSE | Passed: 2020 | 95%
                   </span>
                 </li>
@@ -263,37 +255,37 @@ function App() {
       {/* ===== Projects Section ===== */}
       <section className="py-20 px-6 md:px-16 " id="projects">
         <h2
-          className="text-4xl font-bold text-center text-[#4b0082] mb-12"
+          className="text-4xl font-bold text-center text-[#4b0082] mb-12 drop-shadow-sm"
           data-aos="fade-up"
         >
           Projects
         </h2>
         <div className="grid md:grid-cols-2 gap-10">
           <div
-            className="bg-[#927e93] p-6 rounded-xl shadow-md hover:shadow-xl transition"
+            className="bg-[#927e93] bg-opacity-95 p-6 rounded-xl shadow-md hover:shadow-xl transition backdrop-blur-sm border border-[#a989b3]"
             data-aos="fade-right"
           >
-            <h3 className="text-2xl font-semibold text-[#703095f6]">
+            <h3 className="text-2xl font-semibold text-[#2d0a37] mb-3 drop-shadow-sm">
               Smart Cycle Parking
             </h3>
-            <p className="text-gray-700 mt-2">
+            <p className="text-[#1a0f24] mt-2 leading-relaxed font-medium">
               A campus project using sensors and IoT to manage cycle parking
               intelligently.
             </p>
-            <p className="text-sm text-[#1f0b21c6] mt-2">
+            <p className="text-sm text-[#3d1f47] mt-3 font-semibold bg-white bg-opacity-20 inline-block px-3 py-1 rounded-full">
               Tech: Node.js, Express, MongoDB
             </p>
           </div>
           <div
-            className="bg-[#927e93] p-6 rounded-xl shadow-md hover:shadow-xl transition"
+            className="bg-[#927e93] bg-opacity-95 p-6 rounded-xl shadow-md hover:shadow-xl transition backdrop-blur-sm border border-[#a989b3]"
             data-aos="fade-left"
           >
-            <h3 className="text-2xl font-semibold text-[#703095f6]">Sticars</h3>
-            <p className="text-gray-700 mt-2">
+            <h3 className="text-2xl font-semibold text-[#2d0a37] mb-3 drop-shadow-sm">Sticars</h3>
+            <p className="text-[#1a0f24] mt-2 leading-relaxed font-medium">
               A tool to visualize how stickers would look on cars, including
               material analysis.
             </p>
-            <p className="text-sm text-black mt-2">
+            <p className="text-sm text-[#3d1f47] mt-3 font-semibold bg-white bg-opacity-20 inline-block px-3 py-1 rounded-full">
               Tech: HTML, CSS, JS, Figma
             </p>
           </div>
@@ -302,7 +294,7 @@ function App() {
       {/* ===== Contact Section ===== */}
       <section className="py-20 px-6 md:px-16 " id="contact">
         <h2
-          className="text-4xl font-bold text-center text-[#4b0082] mb-12"
+          className="text-4xl font-bold text-center text-[#4b0082] mb-12 drop-shadow-sm"
           data-aos="fade-up"
         >
           Contact Me
@@ -312,63 +304,63 @@ function App() {
           data-aos="fade-up"
         >
           <div className="space-y-6 text-[#e7ebf0]">
-            <p className="text-lg">
+            <p className="text-lg leading-relaxed font-medium">
               I'm open to freelance, collaborations, or full-time roles. Drop me
               a message and let's connect!
             </p>
             <div className="space-y-4">
-              <div className="flex items-center space-x-3">
+              <div className="flex items-center space-x-3 bg-white bg-opacity-10 p-3 rounded-lg backdrop-blur-sm">
                 <span className="text-[#dc28ed] font-semibold">📧 Email:</span>
                 <a
                   href="mailto:subham@example.com"
-                  className="text-[#e7ebf0] hover:underline"
+                  className="text-[#f0f4f8] hover:text-[#dc28ed] hover:underline transition-colors font-medium"
                 >
                   subham04567gmail.com
                 </a>
               </div>
-              <div className="flex items-center space-x-3">
+              <div className="flex items-center space-x-3 bg-white bg-opacity-10 p-3 rounded-lg backdrop-blur-sm">
                 <span className="text-[#dc28ed] font-semibold">📞 Phone:</span>
                 <a
                   href="tel:+918926040785"
-                  className="text-[#e7ebf0] hover:underline"
+                  className="text-[#f0f4f8] hover:text-[#dc28ed] hover:underline transition-colors font-medium"
                 >
                   +91 89260 40785
                 </a>
               </div>
-              <div className="flex items-center space-x-3">
+              <div className="flex items-center space-x-3 bg-white bg-opacity-10 p-3 rounded-lg backdrop-blur-sm">
                 <span className="text-[#dc28ed] font-semibold">
                   📍 Location:
                 </span>
-                <span>Rourkela, Odisha</span>
+                <span className="text-[#f0f4f8] font-medium">Rourkela, Odisha</span>
               </div>
             </div>
           </div>
 
           <form
-            className=" bg-[#534c57] p-8 rounded-xl shadow-md space-y-6"
+            className="bg-[#534c57] bg-opacity-95 p-8 rounded-xl shadow-md space-y-6 backdrop-blur-sm border border-[#6b5a6f]"
             data-aos="fade-left"
             onSubmit={handleSubmit}
           >
             <input
               type="text"
               placeholder="Your Name"
-              className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#703095f6]"
+              className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#703095f6] bg-white bg-opacity-95 text-gray-800 font-medium placeholder-gray-600"
               required
             />
             <input
               type="email"
               placeholder="Your Email"
-              className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#703095f6]"
+              className="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#703095f6] bg-white bg-opacity-95 text-gray-800 font-medium placeholder-gray-600"
               required
             />
             <textarea
               placeholder="Your Message"
-              className="w-full px-4 py-3 rounded-md border border-gray-300 h-32 resize-none focus:outline-none focus:ring-2 focus:ring-[#a357cff6]"
+              className="w-full px-4 py-3 rounded-md border border-gray-300 h-32 resize-none focus:outline-none focus:ring-2 focus:ring-[#a357cff6] bg-white bg-opacity-95 text-gray-800 font-medium placeholder-gray-600"
               required
             />
             <button
               type="submit"
-              className="bg-[#b34beff6] text-white px-6 py-3 rounded-md hover:bg-[#5d267a] transition"
+              className="bg-[#b34beff6] text-white px-6 py-3 rounded-md hover:bg-[#5d267a] transition font-semibold shadow-md hover:shadow-lg"
             >
               Send Message
             </button>
