@@ -170,16 +170,17 @@ function App() {
                 <h3 className="text-2xl font-semibold mb-6 text-[#7b158f]">
                   Skills
                 </h3>
-                <div className="grid grid-cols-4 gap-6 justify-items-center">
+                {/* Fixed grid layout - responsive columns and proper spacing */}
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 justify-items-center">
                   {skills.map((skill, index) => (
                     <div
                       key={index}
-                      className="flex flex-col items-center group cursor-pointer hover:-translate-y-1 transition-transform duration-300"
+                      className="flex flex-col items-center group cursor-pointer hover:-translate-y-1 transition-transform duration-300 min-h-[80px] justify-center"
                     >
-                      <div className="text-4xl group-hover:scale-110 transition-transform duration-300">
+                      <div className="text-3xl sm:text-4xl group-hover:scale-110 transition-transform duration-300 mb-2">
                         {skill.icon}
                       </div>
-                      <p className="mt-2 text-sm font-medium text-[#430c68] group-hover:text-[#e2dfe8]">
+                      <p className="text-xs sm:text-sm font-medium text-[#430c68] group-hover:text-[#e2dfe8] text-center leading-tight">
                         {skill.name}
                       </p>
                     </div>
@@ -196,17 +197,21 @@ function App() {
                 <h3 className="text-2xl font-semibold mb-4 text-[#4b0082]">
                   Experience
                 </h3>
-                <ul className="text-gray-700 space-y-2">
-                  <li>
-                    <strong>Smart Cycle Parking System</strong> – Campus project
-                    blending design + tech
+                <ul className="text-gray-700 space-y-3">
+                  <li className="leading-relaxed">
+                    <strong className="text-[#4b0082]">Smart Cycle Parking System</strong> 
+                    <br />
+                    <span className="text-sm">Campus project blending design + tech</span>
                   </li>
-                  <li>
-                    <strong>Sticars</strong> – Visual sticker tool for car mods
+                  <li className="leading-relaxed">
+                    <strong className="text-[#4b0082]">Sticars</strong> 
+                    <br />
+                    <span className="text-sm">Visual sticker tool for car mods</span>
                   </li>
-                  <li>
-                    Contributed to event tech stack at NES & Roots (Event
-                    management)
+                  <li className="leading-relaxed">
+                    <strong className="text-[#4b0082]">Event Tech Contribution</strong>
+                    <br />
+                    <span className="text-sm">Contributed to event tech stack at NES & Roots (Event management)</span>
                   </li>
                 </ul>
               </div>
@@ -309,7 +314,7 @@ function App() {
           <div className="space-y-6 text-[#e7ebf0]">
             <p className="text-lg">
               I'm open to freelance, collaborations, or full-time roles. Drop me
-              a message and let’s connect!
+              a message and let's connect!
             </p>
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
