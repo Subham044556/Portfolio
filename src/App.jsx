@@ -2,6 +2,11 @@ import "./App.css";
 import React, { useState, useEffect } from "react";
 import heroImage from "./images/hero_image.jpg";
 import image_1 from "./images/background.png";
+import image_xl from "./images/background_xl.png";
+import image_lg from "./images/background_lg.png";
+import image_md from "./images/background_md.png";
+import image_sm from "./images/background_sm.png";
+import image_mobile from "./images/background_mobile.png";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -86,17 +91,35 @@ function App() {
 
   return (
     <>
-      <div
-        className="fixed top-0 left-0 w-full min-h-screen z-0 transition-opacity duration-300 ease-out"
-        style={{
-          backgroundImage: `url(${image_1})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          opacity: bgOpacity,
-          pointerEvents: "none",
-        }}
-      ></div>
+      <div className="fixed top-0 left-0 w-full h-screen z-0 pointer-events-none">
+        <div
+          className="block sm:hidden w-full h-full bg-cover bg-center shadow-xl"
+          style={{
+            backgroundImage: `url(${image_mobile})`,
+            opacity: bgOpacity,
+          }}
+        ></div>
+        <div
+          className="hidden sm:block md:hidden w-full h-full bg-cover bg-center shadow-xl"
+          style={{ backgroundImage: `url(${image_sm})`, opacity: bgOpacity }}
+        ></div>
+        <div
+          className="hidden md:block lg:hidden w-full h-full bg-cover bg-center shadow-xl"
+          style={{ backgroundImage: `url(${image_md})`, opacity: bgOpacity }}
+        ></div>
+        <div
+          className="hidden lg:block xl:hidden w-full h-full bg-cover bg-center shadow-xl"
+          style={{ backgroundImage: `url(${image_lg})`, opacity: bgOpacity }}
+        ></div>
+        <div
+          className="hidden xl:block 2xl:hidden w-full h-full bg-cover bg-center shadow-xl"
+          style={{ backgroundImage: `url(${image_xl})`, opacity: bgOpacity }}
+        ></div>
+        <div
+          className="hidden 2xl:block w-full h-full bg-cover bg-center shadow-xl"
+          style={{ backgroundImage: `url(${image_1})`, opacity: bgOpacity }}
+        ></div>
+      </div>
 
       <div className="fixed top-0 w-full z-50 bg-black bg-opacity-90 backdrop-blur-md px-4 py-3 shadow-lg">
         <div className="flex justify-between items-center">
@@ -154,11 +177,12 @@ function App() {
               About Me
             </h1>
             <p className="mt-4 text-[#ddb6f1d7] leading-relaxed text-lg">
-              I'm Subham, a full stack developer passionate about building
-              modern, user-friendly web apps. With a background in industrial
-              design, I blend creativity with code. I'm currently focused on
-              React, Node.js, and Tailwind. Always learning, always improving —
-              open to internships and projects that challenge me to grow.
+              I'm Subham Biswas, a full stack developer passionate about
+              building modern, user-friendly web apps. With a background in
+              industrial design, I blend creativity with code. I'm currently
+              focused on React, Node.js, and Tailwind. Always learning, always
+              improving — open to internships and projects that challenge me to
+              grow.
             </p>
 
             {/* Skills */}
@@ -199,19 +223,30 @@ function App() {
                 </h3>
                 <ul className="text-gray-700 space-y-3">
                   <li className="leading-relaxed">
-                    <strong className="text-[#4b0082]">Smart Cycle Parking System</strong> 
+                    <strong className="text-[#4b0082]">
+                      Smart Cycle Parking System
+                    </strong>
                     <br />
-                    <span className="text-sm">Campus project blending design + tech</span>
+                    <span className="text-sm">
+                      Campus project blending design + tech
+                    </span>
                   </li>
                   <li className="leading-relaxed">
-                    <strong className="text-[#4b0082]">Sticars</strong> 
+                    <strong className="text-[#4b0082]">Sticars</strong>
                     <br />
-                    <span className="text-sm">Visual sticker tool for car mods</span>
+                    <span className="text-sm">
+                      Visual sticker tool for car mods
+                    </span>
                   </li>
                   <li className="leading-relaxed">
-                    <strong className="text-[#4b0082]">Event Tech Contribution</strong>
+                    <strong className="text-[#4b0082]">
+                      Event Tech Contribution
+                    </strong>
                     <br />
-                    <span className="text-sm">Contributed to event tech stack at NES & Roots (Event management)</span>
+                    <span className="text-sm">
+                      Contributed to event tech stack at NES & Roots (Event
+                      management)
+                    </span>
                   </li>
                 </ul>
               </div>
