@@ -41,18 +41,27 @@ body{
 
 /* Branding */
 .site-name {
-  color: #fff;
-  font-size: clamp(1.4rem, 2.5vw, 2.4rem);
-  font-weight: 400;
+  position: relative;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: clamp(1.4rem, 3vw, 2.4rem);
+  font-weight: 500;
   letter-spacing: 1px;
   padding: 0.3em 0.7em;
-  text-align: left;
-  font-family: 'Segoe UI', 'Arial', sans-serif;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.25);
-  white-space: nowrap; /* Ensure single line */
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  display: flex;
+  align-items: center;
+  height: 100%; /* match navbar height */
 }
+
+.site-name:hover {
+  color: #c084fc; /* elegant lavender accent */
+  text-shadow: 0 0 6px rgba(192, 132, 252, 0.5), 0 0 10px rgba(192, 132, 252, 0.2);
+}
+
 
 /* Nav menu */
 .nav ul {
@@ -73,7 +82,10 @@ body{
   font-weight: 500;
   position: relative;
   transition: color 0.3s ease;
+  white-space: nowrap; /* Prevents text from wrapping */
+  display: inline-block; /* Ensures smooth layout */
 }
+
 
 /* Hover styles */
 .nav ul li a:hover {
@@ -128,11 +140,7 @@ body{
 }
 
 
-.site-name{
-  color: antiquewhite;
-  font-family: fantasy;
-  font-size: larger;
-}
+
 
 @media (prefers-color-scheme: light) {
 
@@ -141,5 +149,23 @@ body{
   }
   button {
     background-color: #f9f9f9;
+  }
+}
+
+@media (max-width: 640px) {
+  .site-name::after {
+    content: "Portfolio";
+    color: #fff;
+    font-size: inherit;
+    font-family: inherit;
+    position: absolute;
+    left: 0.7em;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .site-name {
+    color: transparent;
+    text-shadow: none;
   }
 }

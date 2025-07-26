@@ -62,6 +62,8 @@ const handleSubmit = async (e) => {
   }
 };
 
+
+
 function App() {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [bgOpacity, setBgOpacity] = useState(1);
@@ -124,7 +126,8 @@ function App() {
           {/* navbar section */}
       <div className="navbar">
         <div className="navbar-container">
-          <h1 className="site-name">Subham's PORTFOLIO</h1>
+          <h1 className="site-name" data-mobile="PORTFOLIO">Subham's PORTFOLIO</h1>
+
           <nav className="nav">
             <ul>
               <li>
