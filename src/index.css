@@ -57,10 +57,6 @@ body{
   height: 100%;
 }
 
-.site-name:hover {
-  color: #c084fc; /* elegant lavender accent */
-  text-shadow: 0 0 6px rgba(192, 132, 252, 0.5), 0 0 10px rgba(192, 132, 252, 0.2);
-}
 
 
 /* Nav menu */
@@ -158,6 +154,7 @@ body{
   .site-name::after {
     content: "Portfolio";
     color: #fff;
+    text-transform: uppercase;
     font-size: clamp(0.9rem, 4vw, 1.5rem); /* smaller font */
     font-family: inherit;
     position: absolute;
@@ -165,9 +162,9 @@ body{
     top: 50%;
     transform: translateY(-50%);
   }
-  .nav ul li{
+  .nav ul li a{
     gap: 0.4rem;
-    font-size: 0.9rem;
+    font-size: 13px;
   }
 
   .site-name {
@@ -177,4 +174,8 @@ body{
     font-size: 1rem;
     margin-right: 0.6rem;
   }
+  .site-name :hover{
+    color: transparent;
+  }
+  
 }

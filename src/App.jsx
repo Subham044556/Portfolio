@@ -10,7 +10,6 @@ import image_mobile from "./images/background_mobile.png";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
-
 import {
   FaReact,
   FaNodeJs,
