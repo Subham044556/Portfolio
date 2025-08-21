@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import heroImage from "./images/hero_image.jpg";
 import image_1 from "./images/background.png";
 import image_xl from "./images/background_xl.png";
@@ -90,6 +90,28 @@ function App() {
     setPosition({ x: (clientX - centerX) / 30, y: (clientY - centerY) / 30 });
   };
 
+  const [showNavbar, setShowNavbar] = useState(true);
+  let lastScrollY = useRef(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > lastScrollY) {
+        // Scrolling down → hide
+        setShowNavbar(false);
+      } else {
+        // Scrolling up → show
+        setShowNavbar(true);
+      }
+      lastScrollY.current = window.scrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
       <div className="fixed top-0 left-0 w-full h-screen z-0 pointer-events-none">
@@ -123,7 +145,7 @@ function App() {
       </div>
 
           {/* navbar section */}
-      <div className="navbar">
+      <div className={`navbar ${showNavbar ? "visible" : "hidden"}`}>
         <div className="navbar-container">
           <h1 className="site-name" data-mobile="PORTFOLIO">Subham's PORTFOLIO</h1>
 
