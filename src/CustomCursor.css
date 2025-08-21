@@ -1,0 +1,29 @@
+.cursor-dot,
+.cursor-circle {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+
+.cursor-dot {
+  width: 5px;
+  height: 5px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.cursor-circle {
+  width: 20px;
+  height: 20px;
+  border: 2px solid white;
+  border-radius: 50%;
+  transition: width 0.2s ease, height 0.2s ease;
+}
+
+.cursor-circle.cursor-hover {
+  width: 60px;
+  height: 60px;
+}

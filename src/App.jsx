@@ -1,12 +1,16 @@
 import "./App.css";
 import React, { useState, useEffect, useRef } from "react";
 import heroImage from "./images/hero_image.jpg";
-import image_1 from "./images/background.png";
-import image_xl from "./images/background_xl.png";
-import image_lg from "./images/background_lg.png";
-import image_md from "./images/background_md.png";
-import image_sm from "./images/background_sm.png";
-import image_mobile from "./images/background_mobile.png";
+// import image_1 from "./images/background.png";
+// import image_xl from "./images/background_xl.png";
+// import image_lg from "./images/background_lg.png";
+// import image_md from "./images/background_md.png";
+// import image_sm from "./images/background_sm.png";
+// import image_mobile from "./images/background_mobile.png";
+
+import DarkVeil from "./components/DarkVeil";
+
+// inside return()
 
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -19,6 +23,9 @@ import {
   FaGithub,
 } from "react-icons/fa";
 import { SiTailwindcss, SiMongodb } from "react-icons/si";
+
+import CustomCursor from "./CustomCursor";
+import LandingText from "./LandingText";
 
 const skills = [
   { name: "HTML", icon: <FaHtml5 className="text-orange-500" /> },
@@ -61,8 +68,6 @@ const handleSubmit = async (e) => {
   }
 };
 
-
-
 function App() {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [bgOpacity, setBgOpacity] = useState(1);
@@ -90,31 +95,49 @@ function App() {
     setPosition({ x: (clientX - centerX) / 30, y: (clientY - centerY) / 30 });
   };
 
-  const [showNavbar, setShowNavbar] = useState(true);
-  let lastScrollY = useRef(0);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > lastScrollY) {
-        // Scrolling down → hide
-        setShowNavbar(false);
-      } else {
-        // Scrolling up → show
-        setShowNavbar(true);
-      }
-      lastScrollY.current = window.scrollY;
-    };
 
-    window.addEventListener("scroll", handleScroll);
+  const [navOpacity, setNavOpacity] = useState(1);
+const lastScrollY = useRef(0);
+const ticking = useRef(false);
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+useEffect(() => {
+  const handleScroll = () => {
+    if (!ticking.current) {
+      window.requestAnimationFrame(() => {
+        const currentScrollY = window.scrollY;
+        let newOpacity = navOpacity;
+
+        if (currentScrollY > lastScrollY.current + 5) {
+          // scrolling down → decrease opacity
+          newOpacity = Math.max(navOpacity - 0.05, 0);
+        } else if (currentScrollY < lastScrollY.current - 5) {
+          // scrolling up → increase opacity
+          newOpacity = Math.min(navOpacity + 0.05, 1);
+        }
+
+        setNavOpacity(newOpacity);
+        lastScrollY.current = currentScrollY;
+        ticking.current = false;
+      });
+
+      ticking.current = true;
+    }
+  };
+
+  window.addEventListener("scroll", handleScroll);
+  return () => window.removeEventListener("scroll", handleScroll);
+}, [navOpacity]);
+
+
+  //for the first line in landing page
+
+  //custom pointer
 
   return (
     <>
-      <div className="fixed top-0 left-0 w-full h-screen z-0 pointer-events-none">
+      <CustomCursor />
+      {/* <div className="fixed top-0 left-0 w-full h-screen z-0 pointer-events-none">
         <div
           className="block sm:hidden w-full h-full bg-cover bg-center shadow-xl"
           style={{
@@ -142,33 +165,45 @@ function App() {
           className="hidden 2xl:block w-full h-full bg-cover bg-center shadow-xl"
           style={{ backgroundImage: `url(${image_1})`, opacity: bgOpacity }}
         ></div>
+      </div> */}
+
+      <div className="fixed top-0 left-0 w-screen h-screen z-0 pointer-events-none  overflow-hidden">
+        <DarkVeil />
       </div>
 
-          {/* navbar section */}
-      <div className={`navbar ${showNavbar ? "visible" : "hidden"}`}>
+      {/* navbar section */}
+      <div className="navbar" style={{ opacity: navOpacity }}>
         <div className="navbar-container">
-          <h1 className="site-name" data-mobile="PORTFOLIO">Subham's PORTFOLIO</h1>
+          <h1 className="site-name" data-mobile="PORTFOLIO">
+            Subham's PORTFOLIO
+          </h1>
 
           <nav className="nav">
             <ul>
               <li>
-                <a href="#">Home</a>
+                <a href="#"> &lt;#/&gt; </a>
               </li>
               <li>
-                <a href="#about">About Me</a>
+                <a href="#about"> &lt;About Me/&gt;</a>
               </li>
               <li>
-                <a href="#projects">Projects</a>
+                <a href="#projects">&lt;Projects/&gt;</a>
               </li>
               <li>
-                <a href="#contact">Contact</a>
+                <a href="#contact">&lt;Contact/&gt;</a>
               </li>
             </ul>
           </nav>
         </div>
       </div>
 
-      <div className="relative z-10 h-screen"></div>
+      {/* Landing text section */}
+      <section
+        
+        className="min-h-screen flex items-center justify-center relative z-0 pt-10"
+      >
+        <LandingText />
+      </section>
 
       <section className="min-h-screen bg-transparent px-8 py-16" id="about">
         <div
@@ -189,7 +224,6 @@ function App() {
               className="rounded-full shadow-xl w-[300px] h-[300px] object-cover mx-auto"
             />
           </div>
-
           <div
             className="w-full md:w-2/3 mt-10 md:mt-0 md:pl-10"
             data-aos="fade-left"
@@ -201,6 +235,7 @@ function App() {
             <h1 className="text-4xl font-mono font-bold text-[#6973cd]">
               About Me
             </h1>
+
             <p className="mt-4 text-[#ddb6f1d7] leading-relaxed text-lg">
               I'm Subham Biswas, a full stack developer passionate about
               building modern, user-friendly web apps. With a background in
@@ -224,7 +259,7 @@ function App() {
                   {skills.map((skill, index) => (
                     <div
                       key={index}
-                      className="flex flex-col items-center group cursor-pointer hover:-translate-y-1 transition-transform duration-300 min-h-[80px] justify-center"
+                      className="flex flex-col items-center group cursor-none hover:-translate-y-1 transition-transform duration-300 min-h-[80px] justify-center cursor-hover-target"
                     >
                       <div className="text-3xl sm:text-4xl group-hover:scale-110 transition-transform duration-300 mb-2">
                         {skill.icon}

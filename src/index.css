@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+/* Hide the default cursor */
+* {
+  cursor: none !important;
+}
 
 body{
   background: #080808;
@@ -8,6 +12,7 @@ body{
 html, body {
   max-width: 100%;
   overflow-x: hidden;
+  cursor: none;
 }
 
 
@@ -28,11 +33,25 @@ html, body {
   top: 0;
   width: 100%;
   z-index: 999;
-  background-color: rgba(0, 0, 0, 0.9); /* Transparent dark background */
+  background-color: rgba(0, 0, 0, 0.137); /* Transparent dark background */
   backdrop-filter: blur(10px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
   padding: 12px 20px;
+  transition: opacity 0.5s ease; /* smooth fade */
 }
+
+
+/* Navbar hide/show behavior */
+.navbar.hidden {
+ transform: translateY(-100%);
+  opacity: 0;
+}
+
+.navbar.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
 
 /* Inner container */
 .navbar-container {
@@ -183,3 +202,5 @@ html, body {
   }
   
 }
+
+
