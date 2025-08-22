@@ -172,7 +172,9 @@ useEffect(() => {
       </div>
 
       {/* navbar section */}
-      <div className="navbar" style={{ opacity: navOpacity }}>
+      <div className="navbar" style={{ opacity: navOpacity,
+      pointerEvents: navOpacity === 0 ? "none" : "auto",
+       }}>
         <div className="navbar-container">
           <h1 className="site-name" data-mobile="PORTFOLIO">
             Subham's PORTFOLIO
