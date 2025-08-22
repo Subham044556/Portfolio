@@ -22,21 +22,63 @@ import {
   FaJs,
   FaGithub,
 } from "react-icons/fa";
-import { SiTailwindcss, SiMongodb } from "react-icons/si";
+import {
+  SiTailwindcss,
+  SiMongodb,
+  SiReact,
+  SiNextdotjs,
+  SiTypescript,
+  SiJavascript,
+} from "react-icons/si";
+
+const techLogos = [
+  { node: <SiReact />, title: "React", href: "https://react.dev" },
+  { node: <SiNextdotjs />, title: "Next.js", href: "https://nextjs.org" },
+  {
+    node: <SiTypescript />,
+    title: "TypeScript",
+    href: "https://www.typescriptlang.org",
+  },
+  {
+    node: <SiTailwindcss />,
+    title: "Tailwind CSS",
+    href: "https://tailwindcss.com",
+  },
+  {
+    node: <SiMongodb />,
+    title: "MongoDB",
+    href: "https://www.mongodb.com",
+  },
+  // {
+  //   node: <SiJavascript />,
+  //   title: "JavsaScript",
+  //   href: "https://www.javascript.com",
+  // },
+];
+
+const imageLogos = [
+  {
+    src: "/logos/company1.png",
+    alt: "Company 1",
+    href: "https://company1.com",
+  },
+  {
+    src: "/logos/company2.png",
+    alt: "Company 2",
+    href: "https://company2.com",
+  },
+  {
+    src: "/logos/company3.png",
+    alt: "Company 3",
+    href: "https://company3.com",
+  },
+];
 
 import CustomCursor from "./CustomCursor";
 import LandingText from "./LandingText";
+import LogoLoop from "./components/LogoLoop";
 
-const skills = [
-  { name: "HTML", icon: <FaHtml5 className="text-orange-500" /> },
-  { name: "CSS", icon: <FaCss3Alt className="text-blue-600" /> },
-  { name: "JavaScript", icon: <FaJs className="text-yellow-400" /> },
-  { name: "React", icon: <FaReact className="text-cyan-400" /> },
-  { name: "Node.js", icon: <FaNodeJs className="text-green-600" /> },
-  { name: "MongoDB", icon: <SiMongodb className="text-green-700" /> },
-  { name: "Tailwind", icon: <SiTailwindcss className="text-sky-400" /> },
-  { name: "GitHub", icon: <FaGithub className="text-gray-800" /> },
-];
+
 
 const handleSubmit = async (e) => {
   e.preventDefault();
@@ -95,40 +137,37 @@ function App() {
     setPosition({ x: (clientX - centerX) / 30, y: (clientY - centerY) / 30 });
   };
 
-
-
   const [navOpacity, setNavOpacity] = useState(1);
-const lastScrollY = useRef(0);
-const ticking = useRef(false);
+  const lastScrollY = useRef(0);
+  const ticking = useRef(false);
 
-useEffect(() => {
-  const handleScroll = () => {
-    if (!ticking.current) {
-      window.requestAnimationFrame(() => {
-        const currentScrollY = window.scrollY;
-        let newOpacity = navOpacity;
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!ticking.current) {
+        window.requestAnimationFrame(() => {
+          const currentScrollY = window.scrollY;
+          let newOpacity = navOpacity;
 
-        if (currentScrollY > lastScrollY.current + 5) {
-          // scrolling down → decrease opacity
-          newOpacity = Math.max(navOpacity - 0.05, 0);
-        } else if (currentScrollY < lastScrollY.current - 5) {
-          // scrolling up → increase opacity
-          newOpacity = Math.min(navOpacity + 0.05, 1);
-        }
+          if (currentScrollY > lastScrollY.current + 5) {
+            // scrolling down → decrease opacity
+            newOpacity = Math.max(navOpacity - 0.05, 0);
+          } else if (currentScrollY < lastScrollY.current - 5) {
+            // scrolling up → increase opacity
+            newOpacity = Math.min(navOpacity + 0.05, 1);
+          }
 
-        setNavOpacity(newOpacity);
-        lastScrollY.current = currentScrollY;
-        ticking.current = false;
-      });
+          setNavOpacity(newOpacity);
+          lastScrollY.current = currentScrollY;
+          ticking.current = false;
+        });
 
-      ticking.current = true;
-    }
-  };
+        ticking.current = true;
+      }
+    };
 
-  window.addEventListener("scroll", handleScroll);
-  return () => window.removeEventListener("scroll", handleScroll);
-}, [navOpacity]);
-
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [navOpacity]);
 
   //for the first line in landing page
 
@@ -172,9 +211,13 @@ useEffect(() => {
       </div>
 
       {/* navbar section */}
-      <div className="navbar" style={{ opacity: navOpacity,
-      pointerEvents: navOpacity === 0 ? "none" : "auto",
-       }}>
+      <div
+        className="navbar"
+        style={{
+          opacity: navOpacity,
+          pointerEvents: navOpacity === 0 ? "none" : "auto",
+        }}
+      >
         <div className="navbar-container">
           <h1 className="site-name" data-mobile="PORTFOLIO">
             Subham's PORTFOLIO
@@ -200,10 +243,7 @@ useEffect(() => {
       </div>
 
       {/* Landing text section */}
-      <section
-        
-        className="min-h-screen flex items-center justify-center relative z-0 pt-10"
-      >
+      <section className="min-h-screen flex items-center justify-center relative z-0 pt-10">
         <LandingText />
       </section>
 
@@ -243,40 +283,39 @@ useEffect(() => {
               building modern, user-friendly web apps. With a background in
               industrial design, I blend creativity with code. I'm currently
               focused on React, Node.js, and Tailwind. Always learning, always
-              improving — open to internships and projects that challenge me to
+              improving, open to internships and projects that challenge me to
               grow.
             </p>
 
             {/* Skills */}
-            <div className="mt-12 grid md:grid-cols-2 gap-8">
+            <div className="mt-12 grid gap-8">
               <div
-                className="bg-[#927e93] p-6 rounded-2xl shadow-md hover:shadow-xl transition"
+                className="bg-[#8347f33f] p-6 rounded-2xl shadow-md hover:shadow-xl transition"
                 data-aos="fade-up"
               >
-                <h3 className="text-2xl font-semibold mb-6 text-[#7b158f]">
+                <h3 className="text-2xl font-semibold mb-6 text-[#eae1f3]">
                   Skills
                 </h3>
                 {/* Fixed grid layout - responsive columns and proper spacing */}
-                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 justify-items-center">
-                  {skills.map((skill, index) => (
-                    <div
-                      key={index}
-                      className="flex flex-col items-center group cursor-none hover:-translate-y-1 transition-transform duration-300 min-h-[80px] justify-center cursor-hover-target"
-                    >
-                      <div className="text-3xl sm:text-4xl group-hover:scale-110 transition-transform duration-300 mb-2">
-                        {skill.icon}
-                      </div>
-                      <p className="text-xs sm:text-sm font-medium text-[#430c68] group-hover:text-[#e2dfe8] text-center leading-tight">
-                        {skill.name}
-                      </p>
-                    </div>
-                  ))}
+                <div className="grid grid-cols-1 justify-items-center">
+                  <LogoLoop
+                    logos={techLogos}
+                    speed={120}
+                    direction="left"
+                    logoHeight={48}
+                    gap={40}
+                    pauseOnHover
+                    scaleOnHover
+                    fadeOut
+                    fadeOutColor="transparent"
+                    ariaLabel="Technology partners"
+                  />
                 </div>
               </div>
 
               {/* Experience */}
               <div
-                className="bg-[#927e93] p-6 rounded-2xl shadow-md hover:shadow-xl transition"
+                className="bg-[#8347f33f] p-6 rounded-2xl shadow-md hover:shadow-xl transition"
                 data-aos="fade-up"
                 data-aos-delay="100"
               >
@@ -315,7 +354,7 @@ useEffect(() => {
             </div>
 
             {/* Education */}
-            <div className="mt-8 bg-[#927e93] p-6 rounded-xl shadow-md hover:shadow-xl transition">
+            <div className="mt-8 bg-[#8347f33f] p-6 rounded-xl shadow-md hover:shadow-xl transition">
               <h3 className="text-2xl font-semibold mb-4 text-[#4b0082]">
                 Education
               </h3>
@@ -367,7 +406,7 @@ useEffect(() => {
         </h2>
         <div className="grid md:grid-cols-2 gap-10">
           <div
-            className="bg-[#927e93] p-6 rounded-xl shadow-md hover:shadow-xl transition"
+            className="bg-[#8347f33f] p-6 rounded-xl shadow-md hover:shadow-xl transition"
             data-aos="fade-right"
           >
             <h3 className="text-2xl font-semibold text-[#703095f6]">
@@ -382,7 +421,7 @@ useEffect(() => {
             </p>
           </div>
           <div
-            className="bg-[#927e93] p-6 rounded-xl shadow-md hover:shadow-xl transition"
+            className="bg-[#8347f33f] p-6 rounded-xl shadow-md hover:shadow-xl transition"
             data-aos="fade-left"
           >
             <h3 className="text-2xl font-semibold text-[#703095f6]">Sticars</h3>
@@ -442,7 +481,7 @@ useEffect(() => {
           </div>
 
           <form
-            className=" bg-[#534c57] p-8 rounded-xl shadow-md space-y-6"
+            className=" bg-[#534c5742] p-8 rounded-xl shadow-md space-y-6"
             data-aos="fade-left"
             onSubmit={handleSubmit}
           >
