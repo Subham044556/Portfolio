@@ -20,8 +20,8 @@ const CustomCursor = () => {
     };
 
     const animateCircle = () => {
-      circleX += (mouseX - circleX) * 0.2; // smooth follow effect
-      circleY += (mouseY - circleY) * 0.2;
+      circleX += (mouseX - circleX) * 0.18; // smooth follow effect
+      circleY += (mouseY - circleY) * 0.18;
 
       cursorCircle.style.left = `${circleX}px`;
       cursorCircle.style.top = `${circleY}px`;

@@ -29,7 +29,7 @@ export default function LandingText() {
         setDisplayWord(randomWord);
 
         elapsed += 100;
-        if (elapsed < 3000) {
+        if (elapsed < 1200) {
           // Keep shuffling every 50ms
           shuffleTimeout = setTimeout(shuffle, 50);
         } else {
