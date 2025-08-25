@@ -319,12 +319,12 @@ function App() {
                 data-aos="fade-up"
                 data-aos-delay="100"
               >
-                <h3 className="text-2xl font-semibold mb-4 text-[#4b0082]">
+                <h3 className="text-2xl font-semibold mb-4 text-[#cccfe7]">
                   Experience
                 </h3>
-                <ul className="text-gray-700 space-y-3">
+                <ul className="text-[#eceaf2f5] space-y-3">
                   <li className="leading-relaxed">
-                    <strong className="text-[#4b0082]">
+                    <strong className="text-[#c6abd9]">
                       Smart Cycle Parking System
                     </strong>
                     <br />
@@ -333,14 +333,14 @@ function App() {
                     </span>
                   </li>
                   <li className="leading-relaxed">
-                    <strong className="text-[#4b0082]">Sticars</strong>
+                    <strong className="text-[#c6abd9]">Sticars</strong>
                     <br />
                     <span className="text-sm">
                       Visual sticker tool for car mods
                     </span>
                   </li>
                   <li className="leading-relaxed">
-                    <strong className="text-[#4b0082]">
+                    <strong className="text-[#c6abd9]">
                       Event Tech Contribution
                     </strong>
                     <br />
@@ -355,10 +355,10 @@ function App() {
 
             {/* Education */}
             <div className="mt-8 bg-[#8347f33f] p-6 rounded-xl shadow-md hover:shadow-xl transition">
-              <h3 className="text-2xl font-semibold mb-4 text-[#4b0082]">
+              <h3 className="text-2xl font-semibold mb-4 text-[#c6abd9]">
                 Education
               </h3>
-              <ul className="space-y-4 text-[#080c10]">
+              <ul className="space-y-4 text-[#eceaf2f5]">
                 <li>
                   <strong>B.Tech in Industrial Design</strong>
                   <br />
@@ -366,7 +366,7 @@ function App() {
                     href="https://www.nitrkl.ac.in/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-orange-700 hover:underline"
+                    className="text-[#8defa2] hover:underline"
                   >
                     National Institute of Technology, Rourkela
                   </a>
@@ -399,7 +399,7 @@ function App() {
       {/* ===== Projects Section ===== */}
       <section className="py-20 px-6 md:px-16 " id="projects">
         <h2
-          className="text-4xl font-bold text-center text-[#e234e6] mb-12"
+          className="text-4xl font-bold text-center text-[#9099ec] mb-12"
           data-aos="fade-up"
         >
           Projects
@@ -409,14 +409,14 @@ function App() {
             className="bg-[#8347f33f] p-6 rounded-xl shadow-md hover:shadow-xl transition"
             data-aos="fade-right"
           >
-            <h3 className="text-2xl font-semibold text-[#703095f6]">
+            <h3 className="text-2xl font-semibold text-[#DAE3E5]">
               Smart Cycle Parking
             </h3>
-            <p className="text-gray-700 mt-2">
+            <p className="text-[#c0dff3] mt-2">
               A campus project using sensors and IoT to manage cycle parking
               intelligently.
             </p>
-            <p className="text-sm text-[#1f0b21c6] mt-2">
+            <p className="text-sm text-[#dba8e0c6] mt-2">
               Tech: Node.js, Express, MongoDB
             </p>
           </div>
@@ -424,12 +424,12 @@ function App() {
             className="bg-[#8347f33f] p-6 rounded-xl shadow-md hover:shadow-xl transition"
             data-aos="fade-left"
           >
-            <h3 className="text-2xl font-semibold text-[#703095f6]">Sticars</h3>
-            <p className="text-gray-700 mt-2">
+            <h3 className="text-2xl font-semibold text-[#DAE3E5]">Sticars</h3>
+            <p className="text-[#c0dff3] mt-2">
               A tool to visualize how stickers would look on cars, including
               material analysis.
             </p>
-            <p className="text-sm text-black mt-2">
+            <p className="text-sm text-[#dba8e0c6] mt-2">
               Tech: HTML, CSS, JS, Figma
             </p>
           </div>
@@ -438,7 +438,7 @@ function App() {
       {/* ===== Contact Section ===== */}
       <section className="py-20 px-6 md:px-16 " id="contact">
         <h2
-          className="text-4xl font-bold text-center text-[#e234e6] mb-12"
+          className="text-4xl font-bold text-center text-[#9099ec] mb-12"
           data-aos="fade-up"
         >
           Contact Me
@@ -454,7 +454,7 @@ function App() {
             </p>
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
-                <span className="text-[#dc28ed] font-semibold">📧 Email:</span>
+                <span className="text-[#9099ec] font-semibold">📧 Email:</span>
                 <a
                   href="mailto:subham@example.com"
                   className="text-[#e7ebf0] hover:underline"
@@ -463,7 +463,7 @@ function App() {
                 </a>
               </div>
               <div className="flex items-center space-x-3">
-                <span className="text-[#dc28ed] font-semibold">📞 Phone:</span>
+                <span className="text-[#9099ec] font-semibold">📞 Phone:</span>
                 <a
                   href="tel:+918926040785"
                   className="text-[#e7ebf0] hover:underline"
@@ -472,7 +472,7 @@ function App() {
                 </a>
               </div>
               <div className="flex items-center space-x-3">
-                <span className="text-[#dc28ed] font-semibold">
+                <span className="text-[#9099ec] font-semibold">
                   📍 Location:
                 </span>
                 <span>Rourkela, Odisha</span>
@@ -481,7 +481,7 @@ function App() {
           </div>
 
           <form
-            className=" bg-[#534c5742] p-8 rounded-xl shadow-md space-y-6"
+            className=" bg-[#8347f33f] p-8 rounded-xl shadow-md space-y-6"
             data-aos="fade-left"
             onSubmit={handleSubmit}
           >
